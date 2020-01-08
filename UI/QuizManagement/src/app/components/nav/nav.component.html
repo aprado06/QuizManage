@@ -1,0 +1,24 @@
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">{{currentUser?.username | uppercase}}</a>
+
+  <div class="collapse navbar-collapse" id="navbarsExample04">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/student">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" >{{currentUser?"Logout":"Login"}}</a>
+      </li>
+      <li class="nav-item">
+              <a class="nav-link" routerLink="/takequiz" >Take Quiz</a>
+      </li>
+      <li class="nav-item">
+              <a class="nav-link" routerLink="/createquiz" >Create Quiz</a>
+      </li>
+      <li class="nav-item">
+              <a class="nav-link" routerLink="/assignquiz" >Assign Quiz</a>
+      </li>
+    </ul>
+  </div>
+</nav>

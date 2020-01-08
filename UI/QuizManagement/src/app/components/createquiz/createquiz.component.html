@@ -1,0 +1,59 @@
+<div class="container">
+    <h1>Question Form</h1>
+    <form (ngSubmit)="onSubmit()" #questionForm="ngForm" id="cqform">
+        <div class="form-group">
+            <label for="quizid">Quiz #</label>
+            <input type="text" class="form-control" id="quizid" required [(ngModel)]="model.question_id" name="quizid" #quizid="ngModel">
+            <div [hidden]="quizid.valid || quizid.pristine" class="alert alert-danger">
+              Quiz # is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="question">Question</label>
+            <input type="text" class="form-control" id="question" required [(ngModel)]="model.question" name="question" #question="ngModel">
+            <div [hidden]="question.valid || question.pristine" class="alert alert-danger">
+              Question is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="A">Answer </label>
+            <input type="text" class="form-control" id="A" required [(ngModel)]="model.answer1" name="A" #A="ngModel">
+            <div [hidden]="A.valid || A.pristine" class="alert alert-danger">
+              Answer A is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="B">Answer </label>
+            <input type="text" class="form-control" id="B" required [(ngModel)]="model.answer2" name="B" #B="ngModel">
+            <div [hidden]="B.valid || B.pristine" class="alert alert-danger">
+              Answer B is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="C">Answer </label>
+            <input type="text" class="form-control" id="C" required [(ngModel)]="model.answer3" name="C" #C="ngModel">
+            <div [hidden]="C.valid || C.pristine" class="alert alert-danger">
+              Answer C is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="D">Answer </label>
+            <input type="text" class="form-control" id="D" required [(ngModel)]="model.answer4" name="D" #D="ngModel">
+            <div [hidden]="D.valid || D.pristine" class="alert alert-danger">
+              Answer D is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="correct"> Correct Answer </label>
+            <input type="text" class="form-control" id="correct" required [(ngModel)]="model.correct" name="correct" #correct="ngModel">
+            <div [hidden]="correct.valid || correct.pristine" class="alert alert-danger">
+              Correct Answer is required
+            </div>
+          </div>
+
+        <button type="submit" class="btn btn-success" id = "bt">Submit</button>
+
+    </form>
+</div>

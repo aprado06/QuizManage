@@ -1,0 +1,31 @@
+<div class="container">
+        <div [hidden]="submitted">
+                <h1>Choose Quiz </h1>
+                <form (ngSubmit)="onSubmit()" #quizForm="ngForm" id= "form1">
+                        <div class="form-group">
+                                <label for="quizid">Quiz Id</label>
+                                <select class="form-control" id="quizid" required [(ngModel)]="model.quiz_id" name="quizid"
+                                        #quizid="ngModel">
+                                        <option *ngFor="let ids of otherTable" [value]="ids">{{ids}}</option>
+                                    </select>
+                            </div>
+                        <button  class="btn btn-success">Submit</button>
+                    </form>
+            </div>
+</div>
+
+<div class="container2">
+    <form onsubmit="Submit()" *ngFor="let quest of currentTable" id= "form2">
+        Question: {{quest.question}} <br>
+        <input type="radio" value="{{quest.answer1}} {{quest.question_id}}"
+            (change)="onItemChange($event)">{{quest.answer1}}<br><br>
+        <input type="radio" value="{{quest.answer2}} {{quest.question_id}}"
+            (change)="onItemChange($event)">{{quest.answer2}}<br><br>
+        <input type="radio" value="{{quest.answer3}} {{quest.question_id}}"
+            (change)="onItemChange($event)">{{quest.answer3}}<br><br>
+        <input type="radio" value="{{quest.answer4}} {{quest.question_id}}"
+            (change)="onItemChange($event)">{{quest.answer4}}<br><br>
+    </form>
+
+    <button *ngIf ="show" (click) ="submit2()" class="btn btn-success" id="btn">Submit</button>
+</div>

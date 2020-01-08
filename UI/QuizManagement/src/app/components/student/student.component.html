@@ -1,0 +1,16 @@
+<table class="table table-striped" id="student-table">
+    <thead class="thead-dark">
+        <tr id="student-table-head-row">
+            <th scope="col">Student Id</th>
+            <th scope="col">Quiz Id</th>
+            <th scope="col">Quiz Grade</th>
+        </tr>
+    </thead>
+    <tbody id="student-table-body">
+        <tr *ngFor="let stud of currentTable">
+            <td>{{stud.user_id}}</td>
+            <td>{{stud.quiz_id}}</td>
+            <td>{{stud.grade}}</td>
+        </tr>
+    </tbody>
+</table>
